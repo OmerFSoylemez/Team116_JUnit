@@ -27,18 +27,25 @@ public class test1 {
         // 2- arama kutusunu locate edelim
         driver.findElement(By.id("twotabsearchtextbox"));
 
+
         // 3- “Samsung headphones” ile arama yapalim
         driver.findElement(By.id("twotabsearchtextbox")).sendKeys("Samsung headphones");
         driver.findElement(By.id("twotabsearchtextbox")).sendKeys(Keys.ENTER);
+
 
         // 4- Bulunan sonuc sayisini yazdiralim
         List<WebElement> sonucsayısı = driver.findElements(By.xpath("//img[@class='s-image']"));
         System.out.println(sonucsayısı.size());
 
+
         // 5- Ilk urunu tiklayalim
         driver.findElement(By.xpath("(//div[@class='aok-relative'])[1]")).click();
 
+
+
         // 6- Sayfadaki tum basliklari yazdiralim
+
+        //????????????????????????????
 
     }
 }
