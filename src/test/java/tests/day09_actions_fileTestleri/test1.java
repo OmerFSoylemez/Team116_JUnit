@@ -1,6 +1,8 @@
 package tests.day09_actions_fileTestleri;
 
-public class test1 {
+import utilities.TestBase;
+
+public class test1 extends TestBase {
 
 
         //     Yeni Class olusturun ActionsClassHomeWork
