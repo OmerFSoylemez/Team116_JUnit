@@ -40,11 +40,11 @@ public class P03 {
     @Before
     public void before () {
         driver.get("https://www.google.com");
-        searcbox = driver.findElement(By.xpath("//*[@id=APjFqb'"));
+        searcbox = driver.findElement(By.xpath("//*[@id=APjFqb']"));
     }
     @After
     public void after () {
-        result = driver.findElement(By.xpath("//div[@id='result-stats']"));
+        result = driver.findElement(By.xpath("//*[@id='result-stats']"));
         System.out.println(result.getText());
     }
 

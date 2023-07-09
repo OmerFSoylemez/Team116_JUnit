@@ -39,11 +39,16 @@ public class test_handleWindows extends TestBaseQuit {
         driver.switchTo().newWindow(WindowType.TAB).get("https://www.wisequarter.com");
 
 
-        // ● Sayfa title’nin “wisequarter” icerdigini test edin
-        expectedtitle  ="wisequarter";
-        actualtitle= driver.getTitle();
-        Assert.assertTrue(actualtitle.contains(expectedtitle));
+        // ● Sayfa title’nin “wisequarter” icerdigini test
+        bekle(2);
+
+        String expectedtitle1  ="Wise Quarter";
+        String actualtitle1= driver.getTitle();
+        System.out.println(actualtitle1);
+        Assert.assertTrue(actualtitle1.contains(expectedtitle1));
         bekle(3);
+
+
 
 
         // ● Yeni bir window olusturup, acilan sayfada walmart.com adresine gidin
@@ -59,7 +64,7 @@ public class test_handleWindows extends TestBaseQuit {
 
         // ● Ilk acilan sayfaya donun ve amazon sayfasina dondugunuzu test edin
         driver.switchTo().window(amazonwHD);
-        String expectedUrl = "https://www.amazon.com";
+        String expectedUrl = "https://www.amazon.com/";
         String actualUrl = driver.getCurrentUrl();
 
         Assert.assertEquals(expectedUrl,actualUrl);
