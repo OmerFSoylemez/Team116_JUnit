@@ -21,8 +21,3 @@ public class P12_KeyboardActions extends TestBase {
 
     }
 }
-    git add .
-        git commit -m "first commit"
-        git branch -M main
-        git remote add origin https://github.com/OmerFSoylemez/team116_JUnit.git
-        git push -u origin main
