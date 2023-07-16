@@ -18,13 +18,19 @@ public class P10_SwitchTo extends TestBase {
     @Test
     public void test01() throws InterruptedException {
 
+        //2-google.com adresine gidin
         driver.get("https://www.google.com");
+
+        // 3-Google title'ın Google içerdiğini test edin
         String ilkSayfaWHD = driver.getWindowHandle();
         System.out.println("İLk sayfanın açıldığı handle değeri "+ ilkSayfaWHD);
         String expectedWords = "Google";
         String actualTitle = driver.getTitle();
         Thread.sleep(3000);
         Assert.assertTrue(actualTitle.contains(expectedWords));
+
+
+        //4-Yeni bir pencerede wisequarter sayfasına gidelim
         driver.switchTo().newWindow(WindowType.WINDOW);// yeni bir pencere açıyor
         Thread.sleep(2000);
         driver.get("https://www.wisequarter.com");// yeni açılan pencerede adrese gidiyor
@@ -40,6 +46,7 @@ public class P10_SwitchTo extends TestBase {
         String actualTitle3 = driver.getTitle();
         Assert.assertTrue(actualTitle3.contains(expectedWords3));
 
+        // 5-wisequarter sayfasının title'nın wise içerdiğini test edin.
         driver.switchTo().newWindow(WindowType.TAB);// yeni bir sekme açıyor
         driver.get("https://www.wisequarter.com"); // yeni açılan sekmede adrese gidiyor
         String expectedWords4 = "Amazon";
