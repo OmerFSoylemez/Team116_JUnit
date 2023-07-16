@@ -19,8 +19,14 @@ public class P11_iframe extends TestBaseQuit {
         // iframe olan sayfada iframe içindeki herhangi bir şeyi test edebilmek için
         // önce iframe penceresine geçmek gerekir
 
-        WebElement iframeCercevesi = driver.findElement(By.id(""));
-        driver.switchTo().frame(iframeCercevesi);
+        WebElement iframeCercevesi = driver.findElement(By.id("mce_0_ifr"));
+        driver.switchTo().frame(iframeCercevesi); // iframe penceresine geçiş yapıyoruz
+
+        WebElement iframeYazisi = driver.findElement(By.id("tinymce"));
+        String iframedekiYazi = iframeYazisi.getText();
+        System.out.println(iframedekiYazi);
+        iframeYazisi.clear();
+        iframeYazisi.sendKeys("have a wise day");
 
 
 

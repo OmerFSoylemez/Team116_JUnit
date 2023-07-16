@@ -1,5 +1,6 @@
 package practice;
 
+import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -15,9 +16,13 @@ public class P12_KeyboardActions extends TestBase {
         // Amazon iPhone XR araması yaptıralım.
 
         Actions actions = new Actions(driver);
-        WebElement searchBox = driver.findElement(By.id("twotabsearchtexbox"));
+        WebElement searchBox = driver.findElement(By.id("twotabsearchtextbox"));
         actions.click(searchBox)
-                .sendKeys("i").sendKeys("p").keyUp("home").keyDown("XR").sendKeys(Keys.ENTER).perform();
+                .keyUp(Keys.SHIFT).sendKeys("i").keyDown(Keys.SHIFT).sendKeys("p").keyUp(Keys.SHIFT).sendKeys("home").keyDown(Keys.SHIFT).sendKeys("XR").sendKeys(Keys.ENTER).perform();
+        WebElement sonucKelimesi = driver.findElement(By.xpath("//div[@class='a-section a-spacing-small a-spacing-top-small'])[1]"));
+        String expectedWords = "iPhone XR";
+        String actualWords= sonucKelimesi.getText();
+        Assert.assertTrue(actualWords.contains(expectedWords));
 
     }
 }
